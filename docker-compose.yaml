@@ -1,0 +1,12 @@
+services:
+  sinusbot:
+    build: .
+    labels:
+      shipyard.route: '/'
+      shipyard.primary-route: 'true'
+    restart: always
+    ports:
+      - 8087:8087
+    volumes:
+      - ./scripts:/sinusbot/scripts
+      - ./data:/sinusbot/data
